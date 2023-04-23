@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.Extensions.Configuration;
 using Octokit;
 
 
@@ -11,9 +12,18 @@ namespace WebApi
         public GitHubService(string accessToken)
         {
             _client = new GitHubClient(new ProductHeaderValue("MyApp"));
-            //_client.Credentials = new Credentials(accessToken);
-            _client.Credentials = new Credentials("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");
+            _client.Credentials = new Credentials(accessToken);
         }
+
+        //public GitHubService(IConfiguration configuration)
+        //{
+        //    _client = new GitHubClient(new ProductHeaderValue("MyApp"));
+        //    //_client.Credentials = new Credentials(accessToken);
+        //    _configuration = configuration;
+        //    var token = configuration["GitHubToken"].ToString();
+        //    _client.Credentials = new Credentials(token);
+        //}
+
 
         public async Task<IReadOnlyList<Repository>> GetRepositories()
         {

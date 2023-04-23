@@ -8,6 +8,7 @@ namespace WebApi
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            var token = builder.Configuration["GitHubToken"];
             // Add services to the container.
 
             builder.Services.AddControllers();
@@ -22,7 +23,7 @@ namespace WebApi
             {
                 var configuration = provider.GetRequiredService<IConfiguration>();
                 var accessToken = configuration["GitHub:AccessToken"];
-                return new GitHubService(accessToken);
+                return new GitHubService(token);
             });
 
             var app = builder.Build();

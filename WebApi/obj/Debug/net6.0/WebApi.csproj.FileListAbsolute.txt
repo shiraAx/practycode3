@@ -10,8 +10,6 @@ C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\bin\Deb
 C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\bin\Debug\net6.0\Service.dll
-C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\bin\Debug\net6.0\Service.pdb
 C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\obj\Debug\net6.0\WebApi.csproj.AssemblyReference.cache
 C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\obj\Debug\net6.0\WebApi.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\obj\Debug\net6.0\WebApi.AssemblyInfoInputs.cache
