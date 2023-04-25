@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Octokit;
-
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace WebApi.Controllers
 {
@@ -31,7 +31,7 @@ namespace WebApi.Controllers
             return Ok(repositories);
         }
         [HttpGet("searchRepositories")]
-        public async Task<ActionResult<IEnumerable<string>>> SearchRepositories([BindNever] string name, [BindNever] string language, [BindNever] string userName)
+        public async Task<ActionResult<IEnumerable<string>>> SearchRepositories([FromQuery][SwaggerParameter(Required = false)] string? name, [FromQuery][SwaggerParameter(Required = false)] string? language, [FromQuery][SwaggerParameter(Required = false)] string? userName)
         {
             var repositories = await _gitHubService.SearchRepositories(name,language,userName);
             return Ok(repositories);

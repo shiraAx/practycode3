@@ -1,28 +1,30 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using Octokit;
-
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace WebApi
 {
     public class GitHubService : IGitHubService
     {
         private readonly GitHubClient _client;
+        private readonly GitHubIntegrationOptions _options;
 
-        public GitHubService(string accessToken)
-        {
-            _client = new GitHubClient(new ProductHeaderValue("MyApp"));
-            _client.Credentials = new Credentials(accessToken);
-        }
-
-        //public GitHubService(IConfiguration configuration)
+        //public GitHubService(string accessToken)
         //{
         //    _client = new GitHubClient(new ProductHeaderValue("MyApp"));
-        //    //_client.Credentials = new Credentials(accessToken);
-        //    _configuration = configuration;
-        //    var token = configuration["GitHubToken"].ToString();
-        //    _client.Credentials = new Credentials(token);
+        //    _client.Credentials = new Credentials(accessToken);
         //}
+
+        public GitHubService(IOptions<GitHubIntegrationOptions> options)
+        {
+            _client = new GitHubClient(new ProductHeaderValue("MyApp"));
+            _options = options.Value;
+            var token = _options.GitHubToken.ToString();
+            _client.Credentials = new Credentials(token);
+        }
 
 
         public async Task<IReadOnlyList<Repository>> GetRepositories()
@@ -62,7 +64,7 @@ namespace WebApi
 
             return repositoryInfos;
         }
-        public async Task<List<string>> SearchRepositories([BindNever] string name, [BindNever] string language, [BindNever] string userName)
+        public async Task<List<string>> SearchRepositories([FromQuery][SwaggerParameter(Required = false)] string? name, [FromQuery][SwaggerParameter(Required = false)] string? language, [FromQuery][SwaggerParameter(Required = false)] string? userName)
         {
             List<string> repositoryList = new List<string>();
             var repositories = await GetRepositories();

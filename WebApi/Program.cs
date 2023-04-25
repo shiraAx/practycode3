@@ -1,4 +1,7 @@
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using WebApi.CachedServices;
 
 namespace WebApi
 {
@@ -8,28 +11,19 @@ namespace WebApi
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            var token = builder.Configuration["GitHubToken"];
-            // Add services to the container.
-
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
             });
-
-            builder.Services.AddSingleton<IGitHubService, GitHubService>(provider =>
-            {
-                var configuration = provider.GetRequiredService<IConfiguration>();
-                var accessToken = configuration["GitHub:AccessToken"];
-                return new GitHubService(token);
-            });
+            builder.Services.AddMemoryCache();
+            builder.Services.Configure<GitHubIntegrationOptions>(builder.Configuration.GetSection(nameof(GitHubIntegrationOptions)));
+            builder.Services.AddScoped<IGitHubService, GitHubService>();
+            builder.Services.Decorate<IGitHubService, CachedGitHubService>();
+         
 
             var app = builder.Build();
-
-
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();

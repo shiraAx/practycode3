@@ -32,3 +32,12 @@ C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\obj\Deb
 C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\obj\Debug\net6.0\WebApi.genruntimeconfig.cache
 C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\obj\Debug\net6.0\ref\WebApi.dll
 C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\bin\Debug\net6.0\libman.json
+C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\bin\Debug\net6.0\Scrutor.dll
+C:\Users\USER001\Desktop\פרקטיקוד\פרויקט 3\Project3\WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
